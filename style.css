@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+header.index, footer.index {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #7289da;
+}
+
+.burger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+main.index {
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-bot {
+    position: relative;
+    padding: 40px 20px;
+}
+
+/* 🌌 Étoiles fixes */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow:
+        10px 10px white,
+        100px 50px white,
+        200px 80px white,
+        300px 120px white,
+        400px 90px white,
+        500px 20px white,
+        600px 70px white,
+        700px 110px white;
+    z-index: 0;
+}
+
+/* 🌠 Étoiles filantes */
+.shooting-star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(45deg, #fff, transparent);
+    animation: shoot 3s infinite;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.shooting-star:nth-child(2) { left: 10%; animation-delay: 0s; }
+.shooting-star:nth-child(3) { left: 30%; animation-delay: 1s; }
+.shooting-star:nth-child(4) { left: 60%; animation-delay: 2s; }
+.shooting-star:nth-child(5) { left: 80%; animation-delay: 2.5s; }
+.shooting-star:nth-child(6) { left: 50%; animation-delay: 3s; }
+
+@keyframes shoot {
+    0% {
+        transform: translateY(0) translateX(0) rotate(45deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(600px) translateX(600px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.bot-image {
+    height: 100px;
+    margin: 20px 0;
+}
+
+.discord-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #5865F2;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.discord-button:hover {
+    background-color: #4752c4;
+}
+
+.discord-icon {
+    height: 24px;
+}
+
+.bot-info {
+    margin: 30px auto;
+    max-width: 800px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.bot-info h1, .bot-info h3 {
+    color: #fff;
+}
+
+iframe {
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+}
+
+footer.index p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1a1a1a;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+        border-top: 1px solid #333;
+    }
+}
