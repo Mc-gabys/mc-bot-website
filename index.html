@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mc-bot - Bot Discord francophone</title>
+    <link rel="icon" href="img/mc-bot.png?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+</script>    
+<body class="main-page">
+
+    <header class="index">
+        <nav>
+            <div class="burger" onclick="toggleMenu()">
+                &#9776;
+            </div>            
+            <a href="index.html"><img src="img/mc-bot.png" alt="Logo Mc-bot" class="logo"></a>
+            <ul class="nav-links">
+                <li class="docu-btn" style="vertical-align: middle;"><a href="/documentation/accueil.html"><span>Documentation</span></a></li>
+                <li class="support-btn" style="vertical-align: middle;"><a href="https://discord.gg/pyJXz5eHkj" target="_blank"><span>Support </span></a></li>
+                <li class="panel-btn" style="vertical-align: middle;"><a href="#"><span>Panel </span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="index">
+        <div class="add-bot">
+            <div class="stars"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="bot-info">
+                <h1 class="bienv">Bienvenue sur le site officiel de The Mc-bot !</h1>
+            </div>
+            <img src="img/mc-bot.png" alt="Bot Discord" class="bot-image">
+            <a href="https://discord.com/oauth2/authorize?client_id=1290631034597150740&permissions=2416176208&integration_type=0&scope=bot" class="discord-button" target="_blank">
+                <img src="img/discord.png" alt="Discord" class="discord-icon">
+                Ajouter le bot sur Discord
+            </a>
+        </div>
+        <div class="bot-info">
+            <h3>Rejoignez notre serveur Discord pour toute question ou assistance concernant le bot !</h3>
+            <iframe src="https://discord.com/widget?id=1369392332251856906&theme=dark" width="600" height="350" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+    </main>
+
+    <footer class="index">
+        <p>Copyright © 2025 Mc-bot<br>All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
