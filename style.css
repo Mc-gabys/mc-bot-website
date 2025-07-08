@@ -103,6 +103,49 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+.panel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 0;
+  width: 150px;
+  height: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.panel-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.panel-btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.panel-btn:hover span {
+  padding-right: 25px;
+}
+
+.panel-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 .support-btn {
     display: flex;
     align-items: center;
@@ -146,6 +189,60 @@ body {
     right: 0;
 }
 
+.docu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 0;
+    width: 250px;
+    height: 50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+  
+.docu-btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.docu-btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+ul.permissions-list li {
+    margin-left: 2rem;
+}
+
+div.commandes-list {
+    margin-left: 2rem;
+}
+
+ul.commandes-list li {
+    margin-left: 2rem;
+}
+
+.docu-btn:hover span {
+    padding-right: 25px;
+}
+  
+.docu-btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
 header {
     background-color: transparent;
     padding: 10px 20px;
@@ -157,6 +254,11 @@ nav {
     justify-content: space-between;
 }
 
+div.content {
+    display: flex;
+    background-color: cadetblue;
+}
+
 .logo {
     width: 60px;
     height: 60px;
@@ -165,6 +267,11 @@ nav {
 
 main.index {
     flex: 1;
+}
+
+main.documentation {
+    flex: 1;
+    padding: 2rem;
 }
 
 nav ul {
@@ -246,6 +353,23 @@ nav ul li a:hover {
     color: gold;
 }
 
+h1.documentation {
+    color: orange;
+}
+
+h3.cmd-list {
+    color: darkmagenta;
+}
+
+.doc-nav {
+    width: 250px;
+    padding: 1em;
+    background: linear-gradient(to bottom, #C0C0C0C0, #808080);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
 .add-bot {
     flex-grow: 1;
     display: flex;
@@ -305,6 +429,7 @@ nav ul li a:hover {
     vertical-align: middle;
 }
 
+
 footer {
     background-color: #8B0000;
     color: gold;
@@ -316,4 +441,27 @@ footer {
 html, body {
     height: 100%;
     overflow-x: hidden;
+}
+
+.documentation-page .small-screen-message {
+    position: fixed;
+    top: 84px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .documentation-page .small-screen-message {
+        display: flex;
+    }
 }
