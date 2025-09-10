@@ -1,214 +1,62 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-    overflow-x: hidden;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #e2e8f0;
 }
 
-header {
-    background-color: transparent;
-    padding: 10px 20px;
+.card-bg {
+    background-color: rgba(23, 23, 23, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.animated-gradient {
+    background: linear-gradient(-45deg, #0a0a0a, #1f2937, #0a0a0a, #3b82f6);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
-div.content {
-    display: flex;
-    background-color: cadetblue;
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.nav-active {
+    color: #60a5fa;
 }
 
-main.index {
-    flex: 1;
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-main.documentation {
-    flex: 1;
-    padding: 2rem;
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-grow: 1;
+.page-transition {
+  --page-transition-duration: 600ms;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s;
+.fade-enter {
+  animation: pageFadeIn var(--page-transition-duration) ease both;
 }
 
-.burger {
-    display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
+.fade-exit {
+  animation: pageFadeOut var(--page-transition-duration) ease both;
+  pointer-events: none;
 }
 
-nav ul li a:hover {
-    color: #87CEEB;
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #1b2735;
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        text-align: center;
-        padding: 15px 0;
-    }
-    
-    .nav-links li a {
-        color: white;
-        text-decoration: none;
-        font-family: inherit;
-        font-size: 18px;
-        padding: 0;
-        border: none;
-        background: none;
-    }
-
-    .burger {
-        display: block;
-    }
-
-    nav {
-        position: relative;
-    }
-}
-
-.nav-links a:hover {
-    color: gold;
-}
-
-h1.documentation {
-    color: orange;
-}
-
-h3.cmd-list {
-    color: darkmagenta;
-}
-
-.doc-nav {
-    width: 250px;
-    padding: 1em;
-    background: linear-gradient(to bottom, #C0C0C0C0, #808080);
-    height: 100vh;
-    position: sticky;
-    top: 0;
-}
-
-.add-bot {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.bienv {
-    text-align: center;
-}
-
-.bot-info {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px gold;
-    color: white;
-    font-size: 1.2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-}
-
-.bot-image {
-    width: 150px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 15px gold;
-}
-
-.discord-button {
-    display: inline-flex;
-    align-items: center;
-    background: linear-gradient(#7289DA, #5b6eae);
-    color: white;
-    font-weight: bold;
-    padding: 15px 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: box-shadow 0.5s ease;
-}
-
-.discord-button:hover {
-    box-shadow: 0 0 10px #7289DA;
-}
-
-.discord-icon {
-    height: 24px;
-    width: auto;
-    margin-right: 10px;
-    object-fit: contain;
-    vertical-align: middle;
-}
-
-
-footer {
-    background-color: #8B0000;
-    color: gold;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9em;
-}
-
-html, body {
-    height: 100%;
-    overflow-x: hidden;
+@keyframes pageFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
 }

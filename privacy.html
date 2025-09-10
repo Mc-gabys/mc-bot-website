@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mc-bot - Bot Discord francophone</title>
+    <title>Mc-bot - Politique de confidentialité</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,9 +22,9 @@
             </a>
             
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link nav-active hover:text-blue-400 transition-colors">Accueil</a>
+                <a href="index.html" class="nav-link hover:text-blue-400 transition-colors">Accueil</a>
                 <a href="terms.html" class="nav-link hover:text-blue-400 transition-colors">Conditions</a>
-                <a href="privacy.html" class="nav-link hover:text-blue-400 transition-colors">Confidentialité</a>
+                <a href="privacy.html" class="nav-link nav-active hover:text-blue-400 transition-colors">Confidentialité</a>
                 <a href="https://discord.gg/pyJXz5eHkj" target="_blank" class="hover:text-blue-400 transition-colors">Support</a>
             </div>
 
@@ -44,23 +44,17 @@
     </header>
 
     <main class="container mx-auto px-6 pt-24 md:pt-32 flex-grow">
-        <div class="fade-in-section text-center">
-            <div class="card-bg rounded-xl p-8 max-w-3xl mx-auto flex flex-col items-center">
-                <img src="img/mc-bot.png" alt="Image du Bot" class="w-32 h-32 rounded-full mb-6 border-4 border-blue-500">
-                <h1 class="text-4xl md:text-5xl font-black mb-4 text-white">Bienvenue sur le site de <span class="text-blue-400">Mc-bot</span> !</h1>
-                <p class="text-slate-300 text-lg mb-8">
-                    Le bot Discord conçu pour <b><span id="typing-text"></span><span class="typing-cursor"></span></b> votre serveur.
-                </p>
-                <a href="https://discord.com/oauth2/authorize?client_id=1290631034597150740&permissions=1102464674934&integration_type=0&scope=bot" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 inline-flex items-center space-x-3 text-lg" target="_blank">
-                    <img src="img/discord.png" alt="Logo Discord" class="h-6 w-auto">
-                    <span>Ajouter le bot sur Discord</span>
-                </a>
-            </div>
-
-            <div class="card-bg rounded-xl p-8 max-w-3xl mx-auto mt-12 flex flex-col items-center">
-                <h3 class="text-2xl font-bold text-white mb-4">Rejoignez notre serveur de support !</h3>
-                <p class="text-slate-300 mb-6">Pour toute question ou assistance concernant le bot.</p>
-                <iframe src="https://discord.com/widget?id=1369392332251856906&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" class="rounded-lg" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        <div class="fade-in-section max-w-4xl mx-auto">
+            <div class="card-bg rounded-xl p-8 md:p-12">
+                <h1 class="text-3xl font-bold mb-6 text-blue-400">Politique de confidentialité</h1>
+                <div class="text-slate-300 space-y-4 leading-relaxed text-lg">
+                    <p>The Mc-bot respecte votre vie privée. Voici comment nous gérons vos données :</p>
+                    <ul class="list-disc list-inside space-y-3 pl-4">
+                        <li>Nous ne collectons que les données nécessaires au bon fonctionnement du bot (par exemple: ID Discord pour les logs et bugs...).</li>
+                        <li>Aucune donnée personnelle n’est vendue, partagée ou utilisée à des fins commerciales.</li>
+                    </ul>
+                    <p>Cette politique peut être modifiée à tout moment. Nous vous recommandons de la consulter régulièrement.</p>
+                </div>
             </div>
         </div>
     </main>
@@ -72,4 +66,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
